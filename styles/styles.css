@@ -1,0 +1,128 @@
+:root{
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-ark-lue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --ver-gray: hsl(0, 0%, 98%);
+
+}
+*{
+  box-sizing: border-box;
+}
+body{
+  background-color: var(--ver-gray);
+  font-size: .9375rem;
+  font-family: 'Poppins',sans-serif;
+}
+header{
+  height: 10px;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5vh;
+}
+.container--title{
+  color: var(--very-ark-lue);
+  line-height: 1.4em;
+  text-align: center;
+  font-size: 1.6rem;
+}
+.title--light{
+  font-weight: 200;
+}
+.container--paragraph{
+  max-width: 532px;
+  margin: 0 20px;
+  color: var(--grayish-blue);
+  text-align: center;
+  line-height: 1.5em;
+}
+.cards{
+  display:grid;
+  grid-template: repeat(4, 1fr) / 1fr;
+  justify-items: center;
+}
+.card{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  max-width: 372px;
+  min-width: 256px;
+  max-height:234px ;
+  min-height: 234px;
+  margin-bottom: 6vh;
+  box-shadow: 1px 2px 4px hsl(229 6% 66% / .4) ;
+  border-radius: .5em;
+}
+.cyan, .red, .yellow, .blue{
+  border-top: 3.8px solid var(--cyan);
+}
+.red{
+  border-top-color: var(--red);
+}
+.yellow{
+  border-top-color: var(--orange);
+}
+.blue{
+  border-top-color:var(--blue);
+}
+.card--title{
+  margin-left: 1.6875rem;
+  margin-top: 1.3em;
+  margin-bottom: 0em;
+  align-self: flex-start;
+  font-size: 1.3rem;
+  color: var(--very-ark-lue);
+}
+.card--paragraph{
+  line-height: 1.5rem;
+  margin-left:1.6875rem;
+  margin-bottom: 1.5em;
+  color: var(--grayish-blue);
+}
+.card--img{
+  margin-right: 1em;
+  margin-bottom: 2em;
+  align-self: flex-end;
+}
+.attribution{
+  text-align: right;
+  font-size: .7rem;
+}
+@media (min-width: 1135px) {
+  .cards{
+    width: 85%;
+    min-width: 1110px;
+    max-height: 530px;
+    margin-left: auto;
+    margin-right: auto;
+    grid-template: repeat(4, 1fr) /repeat(6, 1fr) ;
+    gap: 50px 10px;
+  }
+  .card{
+    min-width: 352px;
+  }
+  .card:first-child{
+    grid-row: 2 / 4;
+    grid-column: span 2;
+  }
+  .red{
+    grid-row: 1 / 3;
+    grid-column: 3 / 5;
+  }
+  .yellow{
+    grid-row: 4 / 5;
+    grid-column: 3 / 5;
+  }
+  .card:last-child{
+    grid-row: 2 / 4;
+    grid-column: 5 / 7;
+  }
+}
